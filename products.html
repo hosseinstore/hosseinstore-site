@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>محصولات | فروشگاه حسین</title>
+  <meta name="description" content="محصولات فروشگاه حسین - لوازم کاربردی و شیک برای آشپزخانه‌ای بهتر" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="nav-container" aria-label="منوی اصلی">
+        <!-- Logo -->
+        <a href="./index.html" class="brand-logo" id="brandLogo">
+          <span>فروشگاه حسین</span>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <ul class="nav-links">
+          <li><a href="./index.html" class="nav-link">خانه</a></li>
+          <li><a href="./products.html" class="nav-link active">محصولات</a></li>
+          <li><a href="./about.html" class="nav-link">درباره ما</a></li>
+          <li><a href="./contact.html" class="nav-link">تماس با ما</a></li>
+        </ul>
+
+        <!-- Nav Action -->
+        <div class="nav-action">
+          <a href="https://t.me/hosseinstore_bot" target="_blank" rel="noopener noreferrer" class="telegram-icon-btn" title="سفارش در تلگرام" id="headerTgBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+            </svg>
+          </a>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="باز کردن منو">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <div class="mobile-nav-drawer">
+      <div class="mobile-nav-header">
+        <span class="brand-logo">فروشگاه حسین</span>
+        <button class="modal-close-btn mobile-nav-close" aria-label="بستن منو">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="./index.html">خانه</a></li>
+        <li><a href="./products.html" class="active">محصولات</a></li>
+        <li><a href="./about.html">درباره ما</a></li>
+        <li><a href="./contact.html">تماس با ما</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <!-- Products Page Header -->
+    <section class="products-header-section" id="productsHeaderSection">
+      <div class="container">
+        <h1 class="hero-title" style="font-size: 36px;">محصولات فروشگاه حسین</h1>
+        <p class="hero-subtitle">لوازم کاربردی و شیک برای آشپزخانه‌ای بهتر</p>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs-wrapper">
+          <div class="filter-tabs" role="tablist" aria-label="دسته‌بندی محصولات">
+            <button class="filter-tab active" data-category="all" role="tab">همه محصولات</button>
+            <button class="filter-tab" data-category="chopper" role="tab">خردکن</button>
+            <button class="filter-tab" data-category="containers" role="tab">ظروف</button>
+            <button class="filter-tab" data-category="cookware" role="tab">قابلمه</button>
+            <button class="filter-tab" data-category="utensils" role="tab">ابزار آشپزی</button>
+            <button class="filter-tab" data-category="flask" role="tab">فلاسک</button>
+            <button class="filter-tab" data-category="serving" role="tab">سرو و پذیرایی</button>
+            <button class="filter-tab" data-category="appliances" role="tab">لوازم برقی</button>
+            <button class="filter-tab" data-category="organizers" role="tab">نظم‌دهنده</button>
+          </div>
+        </div>
+
+        <!-- Products Grid Container -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Populated dynamically by main.js from products-data.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Telegram Quick Order Modal -->
+  <div class="modal-overlay" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="بستن پنجره">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 20px;">
+        <img id="modalProductImg" src="" alt="" style="width: 84px; height: 84px; border-radius: var(--radius-md); object-fit: cover;" />
+        <div>
+          <h3 id="modalProductTitle" style="font-size: 18px; font-weight: 700; color: var(--color-primary); margin-bottom: 4px;"></h3>
+          <span id="modalProductPrice" style="font-size: 16px; font-weight: 700; color: var(--color-primary);"></span>
+        </div>
+      </div>
+
+      <p id="modalProductDesc" style="font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 20px;"></p>
+
+      <div style="margin-bottom: 16px;">
+        <label for="modalProductQty" style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--color-text-primary);">تعداد مورد نظر:</label>
+        <input type="number" id="modalProductQty" min="1" max="50" value="1" class="form-input" style="padding: 10px 14px; width: 100px;" />
+      </div>
+
+      <div style="margin-bottom: 24px;">
+        <label for="modalOrderNotes" style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--color-text-primary);">توضیحات یا رنگ انتخابی (اختیاری):</label>
+        <input type="text" id="modalOrderNotes" placeholder="مثال: رنگ مشکی، ارسال فوری" class="form-input" />
+      </div>
+
+      <button id="modalSendOrderBtn" class="btn btn-primary" style="width: 100%; padding: 14px;">
+        <span>تایید و ارسال به تلگرام</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container">
+      <h4 class="footer-brand">فروشگاه حسین</h4>
+      <ul class="footer-links">
+        <li><a href="./index.html" class="footer-link">خانه</a></li>
+        <li><a href="./products.html" class="footer-link active">محصولات</a></li>
+        <li><a href="./about.html" class="footer-link">درباره ما</a></li>
+        <li><a href="./contact.html" class="footer-link">تماس با ما</a></li>
+      </ul>
+      <p class="footer-copy">© ۱۴۰۲ فروشگاه حسین. تمامی حقوق محفوظ است.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./assets/js/products-data.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
